@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiniflik - Virtual Cinema</title>
+    <style>
+        /* Reset some default styles */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f5ff; /* Light blue background color */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin-top: -30px;
+        }
+
+        /* Header styles */
+        .header {
+            text-align: center;
+            background-color: black;
+            padding: 30px 0;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header h1 span.tinif {
+            color: white; /* White color for "TINI" */
+        }
+
+        .header h1 span.flik {
+            color: royalblue; /* Royal blue color for "FLIK" */
+        }
+
+        /* Form styles */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button {
+            background-color: #ff6600;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1><span class="tinif">TINI</span><span class="flik">FLIK</span></h1>
+    </div>
+    <div class="container">
+        <h2>Reserve Your Spot for a Virtual Cinema Screening</h2>
+        <p>Experience the magic of cinema from the comfort of your home.</p>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Reserve My Spot</button>
+            </div>
+        </form>
+    </div>
+</body>
+<script>
+    // Get a reference to the form element
+    const form = document.querySelector('form');
+
+    // Add an event listener for form submission
+    form.addEventListener('submit', function (event) {
+        // Prevent the form from submitting
+        event.preventDefault();
+
+        // Get the user's input values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+
+        // Perform validation (e.g., check if name and email are not empty)
+        if (name.trim() === '' || email.trim() === '') {
+            alert('Please fill out all fields.');
+            return;
+        }
+
+        // If the validation passes, you can send the data to a server or
+        // perform other actions as needed.
+        // For now, let's display a success message.
+        alert('Reservation successful!');
+
+        // You can also redirect the user to another page if needed.
+        // window.location.href = 'thankyou.html';
+    });
+</script>
+
+</html>
